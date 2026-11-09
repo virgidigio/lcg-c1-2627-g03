@@ -1,10 +1,3 @@
-// src/rami.js
-// Rami che si degradano.
-// 1) crea_rami: il ramo si crepa quando il protagonista ci sale sopra
-//    e dopo poco si spezza e cade.
-// 2) crea_rami_a_tempo: il ramo si spezza da solo dopo un certo
-//    numero di secondi dall'inizio del livello (degrado del mondo).
-
 const LARGHEZZA_RAMO = 160;
 const ALTEZZA_RAMO = 20;
 const MARRONE = "0x8B5A2B";
