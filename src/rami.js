@@ -39,7 +39,6 @@ export function crea_rami_a_tempo(s, protagonista, x_rami, y_rami, secondi) {
       LARGHEZZA_RAMO, ALTEZZA_RAMO, MARRONE, 1);
     PP.physics.add(s, r, PP.physics.type.STATIC);
     PP.physics.add_collider(s, protagonista, r);
-    // 3 secondi prima di spezzarsi il ramo inizia a crepare
     PP.timers.add_timer(s, (secondi - 3) * 1000, function (s) {
       r.visibility.alpha = 0.5;
     }, false);
