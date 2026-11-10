@@ -1,5 +1,5 @@
 const LARGHEZZA_RAMO = 160;
-const ALTEZZA_RAMO = 20;
+const ALTEZZA_RAMO = 40;
 const MARRONE = "0x8B5A2B";
 
 const TEMPO_CREPA = 700;        
