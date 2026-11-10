@@ -14,7 +14,7 @@ function create(s) {
     crea_mappa(s);
     crea_terreno(s);
     crea_angelo(s);
-    crea_rami(s, angelo, [350, 600, 850], [2325, 2225, 2125]);
+    crea_rami(s, angelo, [350, 600, 850, 1100], [2325, 2225, 2125, 2225]);
     crea_erba_deco(s);
     crea_camera(s);
 }

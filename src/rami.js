@@ -6,13 +6,13 @@ const TEMPO_CREPA = 700;
 const TEMPO_ROTTURA = 1500;     
 const TEMPO_SPARIZIONE = 2000;  
 
-export function crea_rami(s, protagonista, x_rami, y_rami) {
+export function crea_rami(s, angelo, x_rami, y_rami) {
   for (let i = 0; i < x_rami.length; i++) {
     let r = PP.shapes.rectangle_add(s, x_rami[i], y_rami[i],
       LARGHEZZA_RAMO, ALTEZZA_RAMO, MARRONE, 1);
     PP.physics.add(s, r, PP.physics.type.STATIC);
     r.calpestato = false;
-    PP.physics.add_collider_f(s, protagonista, r, tocca_ramo);
+    PP.physics.add_collider_f(s, angelo, r, tocca_ramo);
   }
 }
 
@@ -33,12 +33,12 @@ function tocca_ramo(s, p, r) {
   }, false);
 }
 
-export function crea_rami_a_tempo(s, protagonista, x_rami, y_rami, secondi) {
+export function crea_rami_a_tempo(s, angelo, x_rami, y_rami, secondi) {
   for (let i = 0; i < x_rami.length; i++) {
     let r = PP.shapes.rectangle_add(s, x_rami[i], y_rami[i],
       LARGHEZZA_RAMO, ALTEZZA_RAMO, MARRONE, 1);
     PP.physics.add(s, r, PP.physics.type.STATIC);
-    PP.physics.add_collider(s, protagonista, r);
+    PP.physics.add_collider(s, angelo, r);
     PP.timers.add_timer(s, (secondi - 3) * 1000, function (s) {
       r.visibility.alpha = 0.5;
     }, false);
