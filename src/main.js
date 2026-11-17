@@ -7,7 +7,7 @@ const config = {
   canvas_id: "area_gioco",
   background_color: 0x7bd5ff,
   gravity_value: 2000,
-  debug_mode: false,
+  debug_mode: true,
 
 };
 

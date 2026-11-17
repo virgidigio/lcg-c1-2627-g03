@@ -1,10 +1,10 @@
-import { Y_TERRENO, terreno} from "../src/livello.js";
+import { Y_TERRENO, terreni} from "./livello.js";
 
 const X_ANGELO = 150;
-const L_ANGELO = 125;
-const A_ANGELO = 150;
+const L_ANGELO = 130;
+const A_ANGELO = 175;
 
-const VEL_SALTO = 1000;
+const VEL_SALTO = 1500;
 const TASTO_SALTO = PP.key_codes.SPACE;
 const VEL_CORSA = 375;
 
@@ -19,11 +19,13 @@ export function carica_angelo(s) {
         "assets/images/placeholderViandante.png");
 }
 
-export function crea_angelo(s) {
-    angelo = PP.assets.image.add(s, img_angelo, X_ANGELO, Y_TERRENO - A_ANGELO / 2, 0.5, 0.5);
+export function crea_angelo(s, x, y) {
+    angelo = PP.assets.image.add(s, img_angelo, x, y - A_ANGELO / 2, 0.5, 0.5);
     PP.physics.add(s, angelo, PP.physics.type.DYNAMIC);
     PP.physics.set_collide_world_bounds(angelo, true);
-    PP.physics.add_collider(s, angelo, terreno);
+    for (let i = 0; i < terreni.length; i++) {
+    PP.physics.add_collider(s, angelo, terreni[i]);
+}
 }
 
 export function muovi_angelo(s) {
