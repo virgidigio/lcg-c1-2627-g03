@@ -1,7 +1,7 @@
 import { Y_TERRENO, terreni} from "./livello.js";
 
 const X_ANGELO = 150;
-const L_ANGELO = 191.7;
+const L_ANGELO = 225;
 const A_ANGELO = 200;
 
 const L_HITBOX = 80;
@@ -36,9 +36,9 @@ export function crea_angelo(s, x, y) {
     PP.physics.set_collide_world_bounds(angelo, true);
     for (let i = 0; i < terreni.length; i++) {
     PP.physics.add_collider(s, angelo, terreni[i]);}
-    PP.assets.sprite.animation_add(angelo, "fermo", 5, 5, 1, 0);
-    PP.assets.sprite.animation_add(angelo, "corsa", 1, 11, 12, -1);
-    PP.assets.sprite.animation_add(angelo, "salto", 12, 23, 12, -1);
+    PP.assets.sprite.animation_add(angelo, "fermo", 0, 3, 8, -1);
+    PP.assets.sprite.animation_add(angelo, "corsa", 4, 15, 12, -1);
+    PP.assets.sprite.animation_add(angelo, "salto", 16, 27, 12, -1);
     PP.physics.set_collision_rectangle(angelo, L_HITBOX, A_HITBOX, X_HITBOX, Y_HITBOX);
     }
 
